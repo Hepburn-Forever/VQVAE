@@ -6,13 +6,13 @@ import argparse
 import utils
 from models.vqvae import VQVAE
 
-parser = argparse.ArgumentParser()
+
 
 """
 Hyperparameters
 """
 timestamp = utils.readable_timestamp()
-
+parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", type=int, default=32)
 parser.add_argument("--n_updates", type=int, default=5000)
 parser.add_argument("--n_hiddens", type=int, default=128)
@@ -26,7 +26,7 @@ parser.add_argument("--log_interval", type=int, default=50)
 parser.add_argument("--dataset",  type=str, default='CIFAR10')
 
 # whether or not to save model
-parser.add_argument("-save", action="store_true")
+parser.add_argument("--save", action="store_true")
 parser.add_argument("--filename",  type=str, default=timestamp)
 
 args = parser.parse_args()
